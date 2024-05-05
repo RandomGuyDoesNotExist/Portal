@@ -4,8 +4,14 @@
  */
 package com.mycompany.portal;
 
+import static com.mycompany.portal.ReportCard.jLabel13;
 import java.awt.Font;
 import java.io.File;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Vector;
 import javax.swing.BorderFactory;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -50,19 +56,52 @@ public class MainProfile extends javax.swing.JInternalFrame {
         jSeparator1 = new javax.swing.JSeparator();
         StudentNumber = new javax.swing.JLabel();
         RatingText = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        GradeLevelText2 = new javax.swing.JLabel();
+        GradeAndSectionText = new javax.swing.JLabel();
+        RegularStudentText = new javax.swing.JLabel();
+        StrandText1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         curvedPanel3 = new LoginAndSignup.CurvedPanel();
         curvedPanel4 = new LoginAndSignup.CurvedPanel();
+        jSeparator2 = new javax.swing.JSeparator();
+        MobileNumberTextHolder = new javax.swing.JLabel();
+        GuardianMobileNumberActual = new javax.swing.JLabel();
+        EmailTextHolder = new javax.swing.JLabel();
+        GuardianEmailActual = new javax.swing.JLabel();
+        GuardianFacebookAccountTextHolder = new javax.swing.JLabel();
+        GuardianFbAccountActual = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        GuardianMobileNumberTextHolder = new javax.swing.JLabel();
+        FacebookAccountTextHolder1 = new javax.swing.JLabel();
+        StudentMobileNumberActual1 = new javax.swing.JLabel();
+        StudentFbAccountActual1 = new javax.swing.JLabel();
+        EmailTextHolder1 = new javax.swing.JLabel();
+        EmailActual1 = new javax.swing.JLabel();
+        GuardianNameTextHolder = new javax.swing.JLabel();
+        GuardianNameActual = new javax.swing.JLabel();
         curvedPanel5 = new LoginAndSignup.CurvedPanel();
         curvedPanel6 = new LoginAndSignup.CurvedPanel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel6 = new javax.swing.JLabel();
+        StudentFormerSectionsActual = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        BackgroundOnly6 = new javax.swing.JLabel();
+        BackgroundOnly5 = new javax.swing.JLabel();
+        BackgroundOnly2 = new javax.swing.JLabel();
+        BackgroundOnly3 = new javax.swing.JLabel();
+        BackgroundOnly1 = new javax.swing.JLabel();
+        BackgroundOnly9 = new javax.swing.JLabel();
+        BackgroundOnly4 = new javax.swing.JLabel();
+        BackgroundOnly7 = new javax.swing.JLabel();
+        BackgroundOnly8 = new javax.swing.JLabel();
 
         jPanel2.setBackground(new java.awt.Color(234, 232, 220));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 27)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Main Profile");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 12, 150, 30));
 
         curvedPanel1.setBackground(new java.awt.Color(222, 212, 208));
 
@@ -84,7 +123,28 @@ public class MainProfile extends javax.swing.JInternalFrame {
         RatingText.setForeground(new java.awt.Color(130, 130, 43));
         RatingText.setText("[ CUSTOM RATING ]");
 
-        jLabel2.setText("jLabel2");
+        GradeLevelText2.setFont(new java.awt.Font("Times New Roman", 0, 26)); // NOI18N
+        GradeLevelText2.setForeground(new java.awt.Color(0, 0, 0));
+        GradeLevelText2.setText("•  Senior High School - [GRADE LEVEL]");
+
+        GradeAndSectionText.setFont(new java.awt.Font("Times New Roman", 0, 26)); // NOI18N
+        GradeAndSectionText.setForeground(new java.awt.Color(0, 0, 0));
+        GradeAndSectionText.setText("•  [ STRAND - GRADE LEVEL - SECTION ]");
+
+        RegularStudentText.setFont(new java.awt.Font("Times New Roman", 0, 26)); // NOI18N
+        RegularStudentText.setForeground(new java.awt.Color(0, 0, 0));
+        RegularStudentText.setText("•  [ REGULAR OR IRREGULAR STUDENT ]");
+
+        StrandText1.setFont(new java.awt.Font("Times New Roman", 0, 26)); // NOI18N
+        StrandText1.setForeground(new java.awt.Color(0, 0, 0));
+        StrandText1.setText("•  [ STRAND ]");
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout curvedPanel2Layout = new javax.swing.GroupLayout(curvedPanel2);
         curvedPanel2.setLayout(curvedPanel2Layout);
@@ -94,23 +154,24 @@ public class MainProfile extends javax.swing.JInternalFrame {
                 .addGap(14, 14, 14)
                 .addGroup(curvedPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(curvedPanel2Layout.createSequentialGroup()
+                        .addComponent(StudentName)
+                        .addGap(89, 89, 89)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(StudentNumber)
+                        .addGap(90, 90, 90))
+                    .addGroup(curvedPanel2Layout.createSequentialGroup()
                         .addGroup(curvedPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(curvedPanel2Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(RatingText)))
-                        .addGap(0, 14, Short.MAX_VALUE))
-                    .addGroup(curvedPanel2Layout.createSequentialGroup()
-                        .addComponent(StudentName)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(StudentNumber)
-                        .addGap(90, 90, 90))))
-            .addGroup(curvedPanel2Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addGroup(curvedPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGroup(curvedPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(RatingText)
+                                    .addComponent(GradeAndSectionText)
+                                    .addComponent(GradeLevelText2)
+                                    .addComponent(RegularStudentText)
+                                    .addComponent(StrandText1))))
+                        .addGap(0, 128, Short.MAX_VALUE))))
         );
         curvedPanel2Layout.setVerticalGroup(
             curvedPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,16 +179,21 @@ public class MainProfile extends javax.swing.JInternalFrame {
                 .addGap(14, 14, 14)
                 .addGroup(curvedPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(StudentName)
-                    .addComponent(StudentNumber))
+                    .addComponent(StudentNumber)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(RatingText)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addComponent(GradeLevelText2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(StrandText1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(RegularStudentText)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(GradeAndSectionText)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout curvedPanel1Layout = new javax.swing.GroupLayout(curvedPanel1);
@@ -145,20 +211,88 @@ public class MainProfile extends javax.swing.JInternalFrame {
                 .addGap(0, 6, Short.MAX_VALUE))
         );
 
+        jPanel2.add(curvedPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 47, -1, -1));
+
         curvedPanel3.setBackground(new java.awt.Color(221, 212, 208));
 
         curvedPanel4.setBackground(new java.awt.Color(243, 242, 237));
+        curvedPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout curvedPanel4Layout = new javax.swing.GroupLayout(curvedPanel4);
-        curvedPanel4.setLayout(curvedPanel4Layout);
-        curvedPanel4Layout.setHorizontalGroup(
-            curvedPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 666, Short.MAX_VALUE)
-        );
-        curvedPanel4Layout.setVerticalGroup(
-            curvedPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 167, Short.MAX_VALUE)
-        );
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        curvedPanel4.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 937, -1));
+
+        MobileNumberTextHolder.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        MobileNumberTextHolder.setForeground(new java.awt.Color(0, 0, 0));
+        MobileNumberTextHolder.setText("• Mobile Number :");
+        curvedPanel4.add(MobileNumberTextHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 15, -1, -1));
+
+        GuardianMobileNumberActual.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        GuardianMobileNumberActual.setForeground(new java.awt.Color(0, 0, 0));
+        GuardianMobileNumberActual.setText("[ GUARDIAN MOBILE NUMBER ]");
+        curvedPanel4.add(GuardianMobileNumberActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(652, 114, -1, -1));
+
+        EmailTextHolder.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        EmailTextHolder.setForeground(new java.awt.Color(0, 0, 0));
+        EmailTextHolder.setText("• E-mail :");
+        curvedPanel4.add(EmailTextHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 15, -1, -1));
+
+        GuardianEmailActual.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        GuardianEmailActual.setForeground(new java.awt.Color(0, 0, 0));
+        GuardianEmailActual.setText("[ GUARDIAN EMAIL ACCOUNT ]");
+        curvedPanel4.add(GuardianEmailActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(654, 84, -1, -1));
+
+        GuardianFacebookAccountTextHolder.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        GuardianFacebookAccountTextHolder.setForeground(new java.awt.Color(0, 0, 0));
+        GuardianFacebookAccountTextHolder.setText("• Guardian Facebook Account :");
+        curvedPanel4.add(GuardianFacebookAccountTextHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 144, -1, -1));
+
+        GuardianFbAccountActual.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        GuardianFbAccountActual.setForeground(new java.awt.Color(0, 0, 0));
+        GuardianFbAccountActual.setText("[ GUARDIAN FB ACCOUNT ]");
+        curvedPanel4.add(GuardianFbAccountActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(652, 144, -1, -1));
+
+        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+        curvedPanel4.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 75, 937, -1));
+
+        GuardianMobileNumberTextHolder.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        GuardianMobileNumberTextHolder.setForeground(new java.awt.Color(0, 0, 0));
+        GuardianMobileNumberTextHolder.setText("• Guardian Mobile Number :");
+        curvedPanel4.add(GuardianMobileNumberTextHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 114, -1, -1));
+
+        FacebookAccountTextHolder1.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        FacebookAccountTextHolder1.setForeground(new java.awt.Color(0, 0, 0));
+        FacebookAccountTextHolder1.setText("• Facebook Account :");
+        curvedPanel4.add(FacebookAccountTextHolder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 45, -1, -1));
+
+        StudentMobileNumberActual1.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        StudentMobileNumberActual1.setForeground(new java.awt.Color(0, 0, 0));
+        StudentMobileNumberActual1.setText("[ STUDENT MOBILE NUMBER ]");
+        curvedPanel4.add(StudentMobileNumberActual1, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 15, -1, -1));
+
+        StudentFbAccountActual1.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        StudentFbAccountActual1.setForeground(new java.awt.Color(0, 0, 0));
+        StudentFbAccountActual1.setText("[ STUDENT FB ACCOUNT ]");
+        curvedPanel4.add(StudentFbAccountActual1, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 45, -1, -1));
+
+        EmailTextHolder1.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        EmailTextHolder1.setForeground(new java.awt.Color(0, 0, 0));
+        EmailTextHolder1.setText("• E-mail :");
+        curvedPanel4.add(EmailTextHolder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(571, 84, -1, -1));
+
+        EmailActual1.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        EmailActual1.setForeground(new java.awt.Color(0, 0, 0));
+        EmailActual1.setText("[ STUDENT EMAIL ACCOUNT ]");
+        curvedPanel4.add(EmailActual1, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 15, -1, -1));
+
+        GuardianNameTextHolder.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        GuardianNameTextHolder.setForeground(new java.awt.Color(0, 0, 0));
+        GuardianNameTextHolder.setText("• Guardian Name : ");
+        curvedPanel4.add(GuardianNameTextHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 84, -1, -1));
+
+        GuardianNameActual.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        GuardianNameActual.setForeground(new java.awt.Color(0, 0, 0));
+        GuardianNameActual.setText("[ GUARDIAN NAME ]");
+        curvedPanel4.add(GuardianNameActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 84, -1, -1));
 
         javax.swing.GroupLayout curvedPanel3Layout = new javax.swing.GroupLayout(curvedPanel3);
         curvedPanel3.setLayout(curvedPanel3Layout);
@@ -171,23 +305,55 @@ public class MainProfile extends javax.swing.JInternalFrame {
         curvedPanel3Layout.setVerticalGroup(
             curvedPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(curvedPanel3Layout.createSequentialGroup()
-                .addComponent(curvedPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 9, Short.MAX_VALUE))
+                .addComponent(curvedPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
+
+        jPanel2.add(curvedPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
 
         curvedPanel5.setBackground(new java.awt.Color(221, 212, 208));
 
         curvedPanel6.setBackground(new java.awt.Color(243, 242, 237));
 
+        jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Past Sections");
+
+        StudentFormerSectionsActual.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        StudentFormerSectionsActual.setForeground(new java.awt.Color(0, 0, 0));
+        StudentFormerSectionsActual.setText("•  [ STUDENT FORMER SECTIONS ]    [ SCHOOL YEAR ]");
+
         javax.swing.GroupLayout curvedPanel6Layout = new javax.swing.GroupLayout(curvedPanel6);
         curvedPanel6.setLayout(curvedPanel6Layout);
         curvedPanel6Layout.setHorizontalGroup(
             curvedPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 827, Short.MAX_VALUE)
+            .addGroup(curvedPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(curvedPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(curvedPanel6Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(StudentFormerSectionsActual)
+                        .addContainerGap(638, Short.MAX_VALUE))
+                    .addGroup(curvedPanel6Layout.createSequentialGroup()
+                        .addGroup(curvedPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(curvedPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jSeparator4))
+                        .addContainerGap())))
         );
         curvedPanel6Layout.setVerticalGroup(
             curvedPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 48, Short.MAX_VALUE)
+            .addGroup(curvedPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(StudentFormerSectionsActual)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout curvedPanel5Layout = new javax.swing.GroupLayout(curvedPanel5);
@@ -201,43 +367,52 @@ public class MainProfile extends javax.swing.JInternalFrame {
         curvedPanel5Layout.setVerticalGroup(
             curvedPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(curvedPanel5Layout.createSequentialGroup()
-                .addComponent(curvedPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 8, Short.MAX_VALUE))
+                .addComponent(curvedPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jPanel2.add(curvedPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 586, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 27)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Contact Information");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(curvedPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(curvedPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(curvedPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(410, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(curvedPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addGap(5, 5, 5)
-                .addComponent(curvedPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(curvedPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(121, Short.MAX_VALUE))
-        );
+        BackgroundOnly6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/18% background 500 x 250.png"))); // NOI18N
+        BackgroundOnly6.setText("jLabel1");
+        jPanel2.add(BackgroundOnly6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 240, 280, 270));
+
+        BackgroundOnly5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/18% background 500 x 250.png"))); // NOI18N
+        BackgroundOnly5.setText("jLabel1");
+        jPanel2.add(BackgroundOnly5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 250, 500, 260));
+
+        BackgroundOnly2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/18% background 500 x 250.png"))); // NOI18N
+        BackgroundOnly2.setText("jLabel1");
+        jPanel2.add(BackgroundOnly2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, -10, 500, 270));
+
+        BackgroundOnly3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/18% background 500 x 250.png"))); // NOI18N
+        BackgroundOnly3.setText("jLabel1");
+        jPanel2.add(BackgroundOnly3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, -20, 280, 290));
+
+        BackgroundOnly1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/18% background 500 x 250.png"))); // NOI18N
+        BackgroundOnly1.setText("jLabel1");
+        jPanel2.add(BackgroundOnly1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 500, 270));
+
+        BackgroundOnly9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/18% background 500 x 250.png"))); // NOI18N
+        BackgroundOnly9.setText("jLabel1");
+        jPanel2.add(BackgroundOnly9, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 500, 340, 180));
+
+        BackgroundOnly4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/18% background 500 x 250.png"))); // NOI18N
+        BackgroundOnly4.setText("jLabel1");
+        jPanel2.add(BackgroundOnly4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 500, 260));
+
+        BackgroundOnly7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/18% background 500 x 250.png"))); // NOI18N
+        BackgroundOnly7.setText("jLabel1");
+        jPanel2.add(BackgroundOnly7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 470, 180));
+
+        BackgroundOnly8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/18% background 500 x 250.png"))); // NOI18N
+        BackgroundOnly8.setText("jLabel1");
+        jPanel2.add(BackgroundOnly8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 500, 470, 180));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -255,9 +430,72 @@ public class MainProfile extends javax.swing.JInternalFrame {
         setBounds(0, 0, 1290, 710);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            String path = "C:\\Users\\admin\\Documents\\NetBeansProjects\\Portal\\db\\DatabaseNiBFF.accdb";
+            String url = "jdbc:ucanaccess://" + path;  
+            Connection connect = DriverManager.getConnection(url);
+            Statement st = connect.createStatement();
+            String StudentID = null;
+            String query = "SELECT recentID FROM recentlogininfo WHERE ID= 1";
+            ResultSet rs = st.executeQuery(query);
+  
+            while(rs.next()){
+                StudentID = rs.getString(1);               
+            }
+            String query2 = "SELECT * FROM ICT_12B WHERE Student_Number='"+StudentID+"'";
+            ResultSet rs2 = st.executeQuery(query2);
+            Vector v = new Vector();
+            System.out.println(rs2);
+            while(rs2.next()){
+                v.add(rs2.getString("Subject"));
+                v.add(rs2.getString("Q1S1"));
+                v.add(rs2.getString("Q2S1"));
+                v.add(rs2.getString("Q1S2"));
+                v.add(rs2.getString("Q2S2"));
+                String Fname = String.valueOf(rs2.getString("Student_First_Name"));
+                String Lname = String.valueOf(rs2.getString("Student_Last_Name"));
+                StudentName.setText(Fname +" "+ Lname);
+                String Section = String.valueOf(rs2.getString("Student_Section"));
+                GradeAndSectionText.setText("GRADE/SECTION: "+Section+"");  
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BackgroundOnly1;
+    private javax.swing.JLabel BackgroundOnly2;
+    private javax.swing.JLabel BackgroundOnly3;
+    private javax.swing.JLabel BackgroundOnly4;
+    private javax.swing.JLabel BackgroundOnly5;
+    private javax.swing.JLabel BackgroundOnly6;
+    private javax.swing.JLabel BackgroundOnly7;
+    private javax.swing.JLabel BackgroundOnly8;
+    private javax.swing.JLabel BackgroundOnly9;
+    private javax.swing.JLabel EmailActual1;
+    private javax.swing.JLabel EmailTextHolder;
+    private javax.swing.JLabel EmailTextHolder1;
+    private javax.swing.JLabel FacebookAccountTextHolder1;
+    private javax.swing.JLabel GradeAndSectionText;
+    private javax.swing.JLabel GradeLevelText2;
+    private javax.swing.JLabel GuardianEmailActual;
+    private javax.swing.JLabel GuardianFacebookAccountTextHolder;
+    private javax.swing.JLabel GuardianFbAccountActual;
+    private javax.swing.JLabel GuardianMobileNumberActual;
+    private javax.swing.JLabel GuardianMobileNumberTextHolder;
+    private javax.swing.JLabel GuardianNameActual;
+    private javax.swing.JLabel GuardianNameTextHolder;
+    private javax.swing.JLabel MobileNumberTextHolder;
     private javax.swing.JLabel RatingText;
+    private javax.swing.JLabel RegularStudentText;
+    private javax.swing.JLabel StrandText1;
+    private javax.swing.JLabel StudentFbAccountActual1;
+    private javax.swing.JLabel StudentFormerSectionsActual;
+    private javax.swing.JLabel StudentMobileNumberActual1;
     private javax.swing.JLabel StudentName;
     private javax.swing.JLabel StudentNumber;
     private LoginAndSignup.CurvedPanel curvedPanel1;
@@ -266,11 +504,14 @@ public class MainProfile extends javax.swing.JInternalFrame {
     private LoginAndSignup.CurvedPanel curvedPanel4;
     private LoginAndSignup.CurvedPanel curvedPanel5;
     private LoginAndSignup.CurvedPanel curvedPanel6;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     // End of variables declaration//GEN-END:variables
 }
